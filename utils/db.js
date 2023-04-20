@@ -25,9 +25,11 @@ class DBClient {
     try {
       await this.client.connect();
       const collection = this.client.db().collection('users');
-      return await collection.countDocuments();
+      const count = await collection.countDocuments();
+      return count;
     } catch (error) {
-      return error;
+      console.log(error);
+      return 0;
     } finally {
       await this.client.close();
     }
@@ -37,9 +39,11 @@ class DBClient {
     try {
       await this.client.connect();
       const collection = this.client.db().collection('files');
-      return await collection.countDocuments();
+      const count = await collection.countDocuments();
+      return count;
     } catch (error) {
-      return error;
+      console.log(error);
+      return 0;
     } finally {
       await this.client.close();
     }
