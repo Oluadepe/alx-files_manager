@@ -124,5 +124,6 @@ class FilesController {
     }
     return null;
   }
+}
 
 module.exports = FilesController;
